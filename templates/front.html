@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>My blog</title>
+    <style type="text/css">
+    body {
+        font-family: sans-serif; width: 800px; margin: 0 auto; padding: 10px;
+    }
+    .error {
+        color: red;
+    }
+    label {
+        display: block; font-size: 17px;
+    }
+    input[type=text] {
+        width: 400px; font-size: 17px; padding: 2px;
+    }
+    textarea {
+        width: 100%; height: 200px; font-size: 17px; font-family: monospace;
+    }
+    input[type=submit] {
+        font-size: 17px;
+    }
+    hr {
+        margin: 20px auto;
+    }
+
+    .content + .content {
+        margin-top: 20px;
+    }
+    .content-title {
+        font-weight: bold; font-size: 20px;
+    }
+    .content-body {
+        margin: 0; font-size: 17px;
+    #small {
+        font-size: 10px;
+    }
+    }
+</style>
+</head>
+
+<body>
+    <h2>Blog</h2>
+    <form method="post">
+        <label>
+            <div>Title</div>
+            <input type="text" name="subject" value={{title}}>
+        </label>
+        <label>
+            <div>Write what do you have in mind</div>
+            <textarea name="content" cols="30" rows="10">{{content}}</textarea>
+        </label>
+        <div class="error">{{ error }}</div>
+        <input type="submit">
+    </form>
+    <a href="/">Go to posts</a>
+</body>
+
+</html>

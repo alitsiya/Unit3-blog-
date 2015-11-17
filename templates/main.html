@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>My blog</title>
+    <style type="text/css">
+    body {
+        font-family: sans-serif; width: 800px; margin: 0 auto; padding: 10px;
+    }
+    .error {
+        color: red;
+    }
+    label {
+        display: block; font-size: 17px;
+    }
+    input[type=text] {
+        width: 400px; font-size: 17px; padding: 2px;
+    }
+    textarea {
+        width: 100%; height: 200px; font-size: 17px; font-family: monospace;
+    }
+    input[type=submit] {
+        font-size: 17px;
+    }
+    hr {
+        margin: 20px auto;
+    }
+
+    .content + .content {
+        margin-top: 20px;
+    }
+    .content-title {
+        font-weight: bold; font-size: 20px;
+    }
+    .content-body {
+        margin: 0; font-size: 17px;
+    #small {
+        font-size: 10px;
+    }
+    }
+</style>
+</head>
+
+<body>
+    <h2>Blog</h2>
+    <hr> {% for content in contents %}
+    <div class="content">
+        <div class="content-title">
+            <span>{{content.title}}</span>
+            <span style="font-size: 10px; font-weight: normal"> id={{content.key().id()}}</span>
+        </div>
+        <pre class="content-body">{{content.content}}</pre>
+    </div>
+    {% endfor %}
+    <a href="/newpost">Post a new entry</a>
+</body>
+
+</html>
